@@ -1,0 +1,24 @@
+{
+  "name": "fecth-plus",
+  "version": "1.0.0",
+  "description": "Fecth Plus is an NPM package that encapsulates the Fecth API, allowing you to smoothly switch from Axios to the Fecth API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fecth",
+    "api",
+    "fecth",
+    "http",
+    "request",
+    "xml",
+    "httprequest",
+    "javascript",
+    "js",
+    "axios",
+    "fecth-plus"
+  ],
+  "author": "AbuLan",
+  "license": "MIT"
+}
