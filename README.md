@@ -56,12 +56,8 @@ fecths.get('/data')
   });
 ```
 
-For more details and advanced usage, refer to the [documentation](#) (replace with actual documentation link when available).
-
-### Contributing
-
-If you want to contribute to the development of `Fecths`, check out the [contribution guidelines](CONTRIBUTING.md).
+For more details and advanced usage, refer to the [documentation](#) (Not yet open).
 
 ### License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
