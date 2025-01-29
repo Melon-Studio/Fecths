@@ -1,59 +1,48 @@
 ## Fecths
 
-`Fecths` is a JavaScript library for simplifying HTTP requests in web applications. It is built on the `fetch` API, providing a convenient and versatile interface for handling various types of HTTP requests with ease.
+Fetchs is a powerful and flexible HTTP client library for making network requests in JavaScript applications. It provides a wide range of features such as caching, request retrying, request and response interceptors, and timeout handling. Built on top of the native fetch API, Fetchs offers a simple and intuitive interface to handle various HTTP operations with ease.
 
 ### Features
 
-- **Global Configuration:** Set global configurations, such as base URLs, request and response interceptors, etc.
-- **Interceptors:** Support request and response interceptors for customizing behavior.
-- **HTTP Methods:** Convenient methods for common HTTP requests, including GET, POST, PUT, DELETE, PATCH, and custom requests.
-- **File Upload and Download:** Specialized methods for handling file uploads and downloads.
-- **Error Handling:** Automatic handling of non-OK response statuses with detailed error messages.
-- **Timeout Support:** Set a timeout for requests, automatically aborting if the specified time is exceeded.
+- **Multiple HTTP Methods**: Supports all major HTTP methods including GET, POST, PUT, PATCH, DELETE, and HEAD.
+- **Caching Mechanism**: Enables caching of responses with customizable time-to-live (TTL) and storage options (memory or localStorage).
+- **Request Retrying**: Automatically retries failed requests based on specified status codes and retry configurations.
+- **Interceptors**: Allows adding custom logic before sending requests and after receiving responses.
+- **Timeout Handling**: Sets a timeout for requests to prevent hanging requests.
+- **Customizable Configuration**: Provides a global configuration object that can be customized for each request.
 
 ### Installation
 
-```bash
-npm install fecths
-```
+Download the release to your project.
 
 ### Basic Usage
 
 ```javascript
-const Fecths = require('fecths');
+import { Fetchs, FetchsConfig } from 'fetchs';
 
-// Create an instance of Fecths
-const fecths = new Fecths({
-  baseUrl: 'https://api.example.com', // Set your base URL
+// Create a new instance of Fetchs with optional global configuration
+const fetchs = new Fetchs({
+    baseUrl: 'https://www.example.com',
+    timeout: 3000,
+    headers: {
+        'Authorization': 'Bearer YourAccessToken'
+    }
 });
 
-// Set global configuration
-fecths.create({
-  headers: {
-    'Authorization': 'Bearer YourAccessToken',
-  },
-});
+// Define the request configuration
+const config: FetchsConfig = {
+    method: 'GET',
+    responseType: 'json'
+};
 
-// Add request interceptor
-fecths.addRequestInterceptor(async (options) => {
-  // Modify options before sending the request
-  return options;
-});
-
-// Add response interceptor
-fecths.addResponseInterceptor(async (response) => {
-  // Modify the response before resolving the promise
-  return response;
-});
-
-// Make a GET request
-fecths.get('/data')
-  .then((data) => {
-    console.log('Data:', data);
-  })
-  .catch((error) => {
-    console.error('Error:', error.message);
-  });
+// Execute a request
+fetchs.executeRequest<{ message: string }>('/data', config)
+   .then(response => {
+        console.log('Response:', response);
+    })
+   .catch(error => {
+        console.error('Error:', error);
+    });
 ```
 
 For more details and advanced usage, refer to the [documentation](#) (Not yet open).
