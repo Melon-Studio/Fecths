@@ -1,4 +1,4 @@
-## Fecths
+## Fetchs
 
 Fetchs is a powerful and flexible HTTP client library for making network requests in JavaScript applications. It provides a wide range of features such as caching, request retrying, request and response interceptors, and timeout handling. Built on top of the native fetch API, Fetchs offers a simple and intuitive interface to handle various HTTP operations with ease.
 
